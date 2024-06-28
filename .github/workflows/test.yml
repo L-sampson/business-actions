@@ -1,11 +1,11 @@
-name: Deploy
+name: Test
 
 on:
-  push:
-    branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-  test:
+ test:
     name: Test
     runs-on: ubuntu-latest
     steps:
@@ -15,5 +15,3 @@ jobs:
           node-version: 20.x
       - run: npm ci
       - run: npm test
-
-            
